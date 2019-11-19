@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, ActivityIndicator, Image, TouchableOpacity, Button } from 'react-native';
-import { Container, Header, Body, Left, Right, Content } from "native-base";
+import { StyleSheet, Text, View, ActivityIndicator, Image, TouchableOpacity } from 'react-native';
+import { Container, Header, Body, Left, Right, Content, Icon, Button } from "native-base";
 import { AntDesign } from '@expo/vector-icons'
 import ProgressBarAnimated from 'react-native-progress-bar-animated';
 import { Dialog } from "react-native-simple-dialogs";
@@ -25,7 +25,6 @@ export default class App extends React.Component {
             })
         }).then(res => res.json())
             .then((jsonData) => {
-                jsonData.num_of_complete = 24
                 if (jsonData.num_of_complete == 0) {
                     this.setState({
                         no_data: true
@@ -36,28 +35,24 @@ export default class App extends React.Component {
                 else {
                     if (jsonData.num_of_complete < 5) {
                         this.state.egg_level = 0
+                        this.state.progress = 0
                     }
                     else if (jsonData.num_of_complete < 10) {
                         jsonData.num_of_complete = jsonData.num_of_complete % 5 //因為會用 5 當分母
                         this.state.egg_level = 1
+                        this.state.progress = 1
                     }
                     else if (jsonData.num_of_complete < 15) {
                         jsonData.num_of_complete = jsonData.num_of_complete % 5
                         this.state.egg_level = 2
-                    }
-                    else if (jsonData.num_of_complete < 20) {
-                        jsonData.num_of_complete = jsonData.num_of_complete % 5
-                        this.state.egg_level = 3
-                    }
-                    else if (jsonData.num_of_complete < 25) {
-                        jsonData.num_of_complete = jsonData.num_of_complete % 5
-                        this.state.egg_level = 4
-                    }
+                        this.state.progress = 2
+                    }                 
 
 
                     this.setState({
                         num_of_complete: jsonData.num_of_complete,
-                        egg_level: this.state.egg_level
+                        egg_level: this.state.egg_level,
+                        progress: this.state.progress
                     })
                 }
 
@@ -77,19 +72,19 @@ export default class App extends React.Component {
 
     render() {
         const images = {
-            '0': require('../../../IMG/egg_init.png'),
-            '1': require('../../../IMG/egg_step1.png'),
-            '2': require('../../../IMG/egg_step2.png'),
-            '3': require('../../../IMG/egg_step3.png'),
-            '4': require('../../../IMG/egg_step4.png')
+            'pet_0': require('../../../IMG/pet_0.png'),
+            'pet_1': require('../../../IMG/pet_1.png'),
+            'pet_2': require('../../../IMG/pet_2.png'),
+            'pet_background_0': require('../../../IMG/pet_background_0.jpg'),
+            'pet_background_1': require('../../../IMG/pet_background_1.jpg'),
+            'pet_background_2': require('../../../IMG/pet_background_2.jpg'),
         }
 
         if (this.state.no_data != true) {
 
             return (
                 <Container >
-                    <Image style={styles.background} source={require('../../../IMG/background_profile.png')} />
-
+                    <Image style={styles.background} source={images['pet_background_' + this.state.egg_level]} />
 
                     <Header transparent 
                     >
@@ -99,7 +94,7 @@ export default class App extends React.Component {
                             ></AntDesign>
                         </Left>
 
-                        <Body style={{ alignItems: 'flex-end' }} ><Text>寵物專區</Text></Body>
+                        <Body style={{ alignItems: 'flex-end' }} ><Text>成就夥伴</Text></Body>
                         <Right>
                             <TouchableOpacity
                                 onPress={() => this.openDialog(true)}
@@ -110,8 +105,8 @@ export default class App extends React.Component {
                     </Header>
                     <View style={styles.container}>
                         <View style={{ marginBottom: 10 }}>
-                            <Image source={images[this.state.egg_level]}
-                                style={{ width: 120, height: 120, }}
+                            <Image source={images['pet_' + this.state.egg_level]}
+                                style={{ width: 150, height: 150, }}
                             />
                         </View>
                         <Text>Level {this.state.egg_level}</Text>
@@ -122,7 +117,45 @@ export default class App extends React.Component {
                                 backgroundColorOnComplete="#6CC644"
                             />
                         </View>
-
+                       
+                        <View style={{flexDirection: 'row', position: 'absolute', bottom: 10}}>
+                            <View style={[this.state.progress >=  0 ? { display: 'flex',marginHorizontal: 10 } :  { display: 'none' }]}>
+                                <Button 
+                                    style={{backgroundColor: 'orange', padding:5}}
+                                    onPress={() => {
+                                        this.setState({
+                                            egg_level: 0
+                                        })
+                                    }}
+                                >                                    
+                                    <Text>Level1</Text>
+                                </Button>
+                            </View>
+                            <View style={[this.state.progress >= 1 ? { display: 'flex',marginHorizontal: 10 } :  { display: 'none' }]}>
+                                <Button 
+                                     style={{backgroundColor: 'orange', padding:5}}
+                                    onPress={() => {
+                                        this.setState({
+                                            egg_level: 1
+                                        })
+                                    }}
+                                >                                  
+                                    <Text>Level2</Text>
+                                </Button>
+                            </View>
+                            <View style={[this.state.progress >= 2 ? { display: 'flex',marginHorizontal: 10 } :  { display: 'none' }]}>
+                                <Button 
+                                    style={{backgroundColor: 'orange', padding:5,}}
+                                    onPress={() => {
+                                        this.setState({
+                                            egg_level: 2
+                                        })
+                                    }}
+                                >                                   
+                                    <Text>Level3</Text>
+                                </Button>
+                            </View>
+                        </View>
                     </View>
                     <Dialog
                         title="提示"
@@ -135,8 +168,7 @@ export default class App extends React.Component {
                         }
                         onTouchOutside={() => this.openDialog(false)}
                         visible={this.state.showDialog}
-                    >
-                       
+                    >                      
                         <Text style={{ marginBottom: 30 }}>
                             每完成五個成就即可將寵物升級
                         </Text>
@@ -158,7 +190,7 @@ export default class App extends React.Component {
         if (this.state.no_data == true) {
             return (
                 <Container>
-                    <Header transparent 
+                    <Header transparent
                     >
                         <Left>
                             <AntDesign name="left" style={{ paddingLeft: 10 }} size={25}
@@ -187,13 +219,13 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,       
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
     },
     background: {
-        height: 800,
-        width: 600,
+        height: '100%',
+        width: '100%',
         position: 'absolute',
     }
 })

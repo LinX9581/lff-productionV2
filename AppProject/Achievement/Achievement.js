@@ -218,7 +218,7 @@ class Achievement extends Component {
                                             <MaterialIcons name="pets" size={50}></MaterialIcons>
                                         </View>
                                         <View style={{ width: '100%', backgroundColor: '#356d99', alignItems: 'center', paddingVertical: 5 }}>
-                                            <Text style={{ color: 'white' }}>寵物專區</Text>
+                                            <Text style={{ color: 'white' }}>成就夥伴</Text>
                                         </View>
                                     </TouchableOpacity>
                                 </View>

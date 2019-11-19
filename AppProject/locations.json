@@ -1,0 +1,151 @@
+[
+    {
+        "label": "主線",
+        "name": "世新大學管理學院",
+        "address": "116台北市文山區木柵路一段111號",
+        "coords": {
+            "latitude": 24.988076,
+            "longitude": 121.547923
+        },
+        "image_url": "http://lff-production.linxnote.club/location/shu.png"
+    },
+    {
+        "label": "主線",
+        "name": "公館夜市",
+        "address": "100台北市中正區中山南路21號",
+        "coords": {
+            "latitude": 25.013886,
+            "longitude": 121.534669
+        },
+        "image_url": "http://lff-production.linxnote.club/location/Market_2.png"
+    },
+    {
+        "label": "主線",
+        "name": "景美夜市",
+        "address": "116台北市文山區景美街",
+        "coords": {
+            "latitude": 24.990821,
+            "longitude": 121.541741
+        },
+        "image_url": "http://lff-production.linxnote.club/location/Market_1.png"
+    },
+    {
+        "label": "前十大熱門景點",
+        "name": "臺北市立動物園",
+        "address": "116台北市文山區新光路二段30號",
+        "time":"9:00~17:00",
+        "coords": {
+            "latitude": 24.998359,
+            "longitude":   121.581029
+        },
+        "image_url": "http://lff-production.linxnote.club/location/zoo.png"
+    },
+    {
+        "label": "前十大熱門景點",
+        "name": "中正紀念堂",
+        "address": "100台北市中正區中山南路21號",
+        "time":"9:00~18:00",
+        "coords": {
+            "latitude": 25.034615, 
+            "longitude":  121.521752
+        },
+        "image_url": "http://lff-production.linxnote.club/location/Memorial_hall.png"
+    },
+    
+    {
+        "label": "前十大熱門景點",
+        "name": "台北101",
+        "address": " 110台北市信義區信義路五段7號",
+        "time":"9:00~22:00",
+        "coords": {
+            "latitude": 25.033851, 
+            "longitude":  121.564537
+        },
+        "image_url": "http://lff-production.linxnote.club/location/Taipei_101.png"
+    },
+    
+    {
+        "label": "前十大熱門景點",
+        "name": "國立國父紀念館",
+        "address": " 110台北市信義區仁愛路四段505號",
+        "time":"9:00~18:00",
+        "coords": {
+            "latitude": 25.040041, 
+            "longitude":  121.560244
+        },
+        "image_url": "http://lff-production.linxnote.club/location/Memorial.png"
+    },
+    
+    {
+        "label": "前十大熱門景點",
+        "name": "松山文創園區",
+        "address": "110台北市信義區光復南路133號",
+        "time":"9:00~18:00",
+        "coords": {
+            "latitude": 25.043767, 
+            "longitude":  121.560589
+        },
+        "image_url": "http://lff-production.linxnote.club/location/Park.png"
+    },
+    
+    {
+        "label": "前十大熱門景點",
+        "name": "華山1914文化創意產業園區",
+        "address": "100台北市中正區八德路一段1號",
+        "time":"24小時營業",
+        "coords": {
+            "latitude": 25.044146, 
+            "longitude":  121.529392
+        },
+        "image_url": "http://lff-production.linxnote.club/location/Park_2.png"
+    },
+    
+    {
+        "label": "前十大熱門景點",
+        "name": "臺北市兒童新樂園",
+        "address": "11169台北市士林區承德路五段55號",
+        "time":"9:00~17:00",
+        "coords": {
+            "latitude": 25.097262, 
+            "longitude":  121.514915
+        },
+        "image_url": "http://lff-production.linxnote.club/location/Paradise.png"
+    },
+    
+    {
+        "label": "前十大熱門景點",
+        "name": "國立臺灣科學教育館",
+        "address": " 111台北市士林區士商路189號",
+        "time":"9:00~17:00",
+        "coords": {
+            "latitude": 25.096143, 
+            "longitude":  121.516688
+        },
+        "image_url": "http://lff-production.linxnote.club/location/Education_hall.png"
+    },
+    
+    {
+        "label": "前十大熱門景點",
+        "name": "國立故宮博物院",
+        "address": "111台北市士林區至善路二段221號",
+        "time":"8:30~18:30",
+        "coords": {
+            "latitude": 25.102360,
+            "longitude":   121.548485
+        },
+        "image_url": "http://lff-production.linxnote.club/location/Forbidden_city.png"
+    },
+    
+    {
+        "label": "前十大熱門景點",
+        "name": "士林花園官邸",
+        "address": "111台北市士林區中山北路五段451號",
+        "time":"8:00~19:00",
+        "coords": {
+            "latitude": 25.091548,
+            "longitude":   121.527368
+        },
+        "image_url": "http://lff-production.linxnote.club/location/Shilin.png"
+    }  
+
+]

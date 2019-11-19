@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, AsyncStorage, Dimensions, TouchableOpacity, Image, RefreshControl, ScrollView, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, AsyncStorage, Dimensions, TouchableOpacity, Image, RefreshControl, ScrollView, ActivityIndicator,YellowBox } from 'react-native';
+console.disableYellowBox=true
 import { Container, Content, } from 'native-base'
 import { createAppContainer, createSwitchNavigator, } from 'react-navigation'
 import { MaterialCommunityIcons, AntDesign, Ionicons, MaterialIcons, createIconSetFromIcoMoon } from '@expo/vector-icons';
@@ -20,6 +21,7 @@ import Puzzle_topic from './Undertake/Puzzle_topic'
 import Puzzle_Complete from './Complete/Puzzle_Complete'
 import Maps from './Maps'
 import Journal from './Journal/Journal'
+import { warning } from 'react-native-gifted-chat/lib/utils';
 
 var width = Dimensions.get('window').width * 0.8
 var height = width * 0.4 * 0.82

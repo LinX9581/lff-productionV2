@@ -5,7 +5,7 @@ import { createSwitchNavigator, createAppContainer,  createBottomTabNavigator } 
 import Achievement from './Achievement/Achievement'
 import Home from './Home/Profile';
 import Posts from './Posts/Posts';
-import Notification from './Notification/Notification'
+import ChatRouter from './Notification/ChatRouter'
 import { Ionicons } from '@expo/vector-icons'; // 6.2.2
 import Rank from './Achievement/Rank/Rank'
 
@@ -91,7 +91,7 @@ const AppTabNavigator = createBottomTabNavigator({
    },
   
    討論區: {
-      screen: Notification
+      screen: ChatRouter
    },
 
 }, {

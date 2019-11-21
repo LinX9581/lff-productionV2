@@ -25,6 +25,7 @@ export default class App extends React.Component {
             })
         }).then(res => res.json())
             .then((jsonData) => {
+                // jsonData.num_of_complete = 6  測試成就完成數
                 if (jsonData.num_of_complete == 0) {
                     this.setState({
                         no_data: true

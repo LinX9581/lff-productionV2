@@ -24,7 +24,7 @@ class Chatname extends React.Component {
   render() {
     return (
       <View>
-        <Text style={styles.title}>輸入任意名子:</Text>
+        <Text style={styles.title}>隨意輸入名子:</Text>
         <TextInput
           style={styles.nameInput}
           placeHolder="Flutter God Evan Bacon"

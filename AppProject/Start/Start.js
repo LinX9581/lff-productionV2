@@ -138,6 +138,7 @@ export default class Start extends React.Component {
 				{
 					key: "k7",
 					image: require("../../IMG/Intro/step7.png"),	
+					imageStyle: styles.image,
 					backgroundColor: "#F4B1BA",
 				},
 				{

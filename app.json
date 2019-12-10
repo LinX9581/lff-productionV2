@@ -9,7 +9,7 @@
       "android",
       "web"
     ],
-    "version": "2.0.0",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -27,10 +27,10 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.shu.lifeforfunproductionV1",
+      "package": "com.shu.lifeforfuV2",
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyDjgDTl93QYh7QR2hDmQfQVPhqkSdc0VOM"
+          "apiKey": "AIzaSyDnL876C5WltTl88tFlaUOiT7AO9ucs2sg"
         }
       }
     }
